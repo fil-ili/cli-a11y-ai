@@ -7,8 +7,6 @@
 # Environment variables
 .env
 
-.github
-
 # IDEs
 .idea/
 .vscode/
