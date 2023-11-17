@@ -21,19 +21,18 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
-          registry-url: https://npm.pkg.github.com/
+          node-version: '18.x'
+          registry-url: 'https://npm.pkg.github.com/'
           cache: 'yarn'
 
       - name: Configure NPM Credentials
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
 
       - name: Install Dependencies
-        shell: bash
         run: yarn install --frozen-lockfile
 
       - name: Publish To NPM
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn dlx semantic-release
+        run: npx semantic-release
