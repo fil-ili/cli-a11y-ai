@@ -22,6 +22,7 @@ export const run = async (
     'node_modules',
     'build',
     '.git',
+    '.github',
     ...getGitIgnoredDirs(startPath),
   ];
 
