@@ -12,6 +12,9 @@
   "bin": {
     "cli-a11y-ai": "./dist/src/index.js"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [
     "ai",
     "accessibility",
