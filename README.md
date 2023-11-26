@@ -63,9 +63,6 @@ If you have a Replicate API key, you can pass it as a command-line argument:
 cli-a11y-ai -k YOUR_API_KEY
 ```
 
-// not true, remove
-Alternatively, set the `REPLICATE_API_KEY` in your environment variables ( `.env` file).
-
 ## Command Options
 
 - `-k, --api-key <key>`: Specifies the API key for the Replicate service.
