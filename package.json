@@ -13,7 +13,7 @@
     "cli-a11y-ai": "./dist/src/index.js"
   },
   "files": [
-    "dist/**/*"
+    "dist"
   ],
   "keywords": [
     "ai",
