@@ -1,6 +1,6 @@
 <div align="center">
   <h1>cli-a11y-ai</h1>
-  <p>A CLI tool to enhance web accessibility by auto-generating descriptive alt text for <code>img</code> tags in HTML, TSX, JSX, JS, TS, MD, and MDX files using AI technology.</p>
+  <p>A CLI tool to enhance web accessibility by auto-generating descriptive alt text for <code>img</code> tags in HTML files using AI technology.</p>
   <img src=".github/action.gif" alt="cli-a11y-ai demonstration"/>
   <a href="https://www.npmjs.com/package/cli-a11y-ai"><img src="https://img.shields.io/npm/v/cli-a11y-ai.svg" alt="Current version"></a>
 </div>
@@ -21,7 +21,7 @@
 
 ## Introduction
 
-`cli-a11y-ai` is a command-line tool designed to automatically add alternative text (alt text) to image tags in files. It scans HTML, TSX, JSX, JS, TS, MD, and MDX files, identifying images without alt attributes and uses the BLIP (Bootstrapping Language-Image Pre-training) AI model to generate relevant descriptions, enhancing both accessibility and SEO.
+`cli-a11y-ai` is a command-line tool designed to automatically add alternative text (alt text) to image tags in files. It scans HTML files, identifying images without alt attributes and uses the BLIP (Bootstrapping Language-Image Pre-training) AI model to generate relevant descriptions, enhancing both accessibility and SEO.
 
 ## Features
 

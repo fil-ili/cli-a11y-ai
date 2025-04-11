@@ -1,26 +1,27 @@
 {
   "name": "cli-a11y-ai",
-  "version": "1.0.0",
-  "description": "A CLI tool to enhance web accessibility by auto-generating descriptive alt text img tags in HTML, TSX, JSX, JS, TS, MD, and MDX files using AI technology.",
+  "version": "0.1.0",
+  "description": "CLI tool to add alt text to images using AI",
   "author": "Filip Ilievski @fil-ili",
   "license": "MIT",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "jest"
-  },
+  "main": "dist/index.js",
   "bin": {
-    "cli-a11y-ai": "./dist/src/index.js"
+    "cli-a11y-ai": "dist/cli.js"
   },
-  "files": [
-    "dist"
-  ],
   "keywords": [
     "ai",
     "accessibility",
     "a11y",
-    "cli",
-    "image-alt-text"
+    "cli"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:manual": "ts-node src/test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
   ],
   "devDependencies": {
     "@types/jest": "^29.5.5",
