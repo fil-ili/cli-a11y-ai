@@ -34,7 +34,7 @@
     "@types/line-reader": "^0.0.35",
     "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
-    "commander": "^11.1.0",
+    "commander": "^13.1.0",
     "dotenv": "^16.3.1",
     "line-reader": "^0.4.0"
   },

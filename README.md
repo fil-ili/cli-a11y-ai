@@ -49,23 +49,13 @@ yarn global add cli-a11y-ai
 
 ## Usage
 
-To use the tool in your project, navigate to your project directory and run:
+To use the tool in your project, navigate to your project directory and create a `.env` file and add `REPLICATE_API_KEY=<API_KEY>` and run:
 
 ```bash
 cli-a11y-ai
 ```
 
-## With an API Key
-
-If you have a Replicate API key, you can pass it as a command-line argument:
-
-```bash
-cli-a11y-ai -k YOUR_API_KEY
-```
-
-## Command Options
-
-- `-k, --api-key <key>`: Specifies the API key for the Replicate service.
+That's it! The tool will scan your HTML files, identify images without alt attributes, and generate descriptive alt texts using the BLIP model.
 
 ## Model Accuracy and Limitations
 
