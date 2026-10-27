@@ -1,7 +1,16 @@
 import { FAILED_IMAGE_TEXT, imageToText } from '../imageToText';
 import axios from 'axios';
 
-const VALID_URL = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png'
+const VALID_URLS = [
+  {
+    url: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png',
+    alt: 'The google logo',
+  },
+  {
+    url: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg',
+    alt: 'A goat standing on top of a wooden post',
+  },
+];
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -25,8 +34,8 @@ describe('imageToText', () => {
     mockedAxios.post.mockResolvedValueOnce(mockResponse);
     mockedAxios.get.mockResolvedValueOnce({ data: mockOutput });
 
-    const result = await imageToText(VALID_URL);
-    expect(result).toEqual('The google logo');
+    const result1 = await imageToText(VALID_URLS[0].url);
+    expect(result1).toEqual(VALID_URLS[0].alt);
   });
 
   it('should return "failed" when the API call is unsuccessful', async () => {
