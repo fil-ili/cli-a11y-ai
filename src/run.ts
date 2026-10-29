@@ -15,7 +15,7 @@ export const run = async (
   includeDir: string | null = null
 ) => {
   const absoluteStartPath = path.join(startPath, includeDir || '');
-  const extensions = ['.html']; // Only focus on HTML files
+  const extensions = ['.html', '.jsx', '.tsx', '.js', '.ts', '.md', '.mdx'];
 
   const ignoredDirectories = [
     'dist',
@@ -97,22 +97,8 @@ const iterateFiles = async (
 
 const processFile = async (filePath: string) => {
   infoLog(`Processing file: ${filePath}`);
+
   const fileContent = fs.readFileSync(filePath, 'utf-8');
-  let modified = false;
-
-  modified = await processHtmlFile(filePath, fileContent);
-
-  if (modified) {
-    successLog(`Updated file: ${filePath}`);
-  } else {
-    infoLog(`No changes made to ${filePath}`);
-  }
-};
-
-const processHtmlFile = async (
-  filePath: string,
-  fileContent: string
-): Promise<boolean> => {
   const $ = cheerio.load(fileContent);
   let modified = false;
 
@@ -132,7 +118,8 @@ const processHtmlFile = async (
   if (modified) {
     const updatedContent = $.html();
     fs.writeFileSync(filePath, updatedContent);
+    successLog(`Updated file: ${filePath}`);
+  } else {
+    infoLog(`No changes made to ${filePath}`);
   }
-
-  return modified;
 };
